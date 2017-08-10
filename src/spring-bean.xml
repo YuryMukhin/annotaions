@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <context:annotation-config></context:annotation-config>
+
+
+    <bean id="sonnet29" class="Sonnet29"/>
+    <bean id="duke"
+          class="PoeticJuggler"
+          autowire="constructor"/>
+
+    <bean id="theStage"
+          class="Stage"
+          factory-method="getInstance"/>
+
+    <bean id="piano"
+          class="Piano"
+          />
+
+    <bean id="saxophone"
+          class="Saxophone"
+          autowire-candidate="false"/>
+
+    <bean id="baseSaxo"
+          class="Instrumentalist"
+          autowire-candidate="false"
+          p:song="Jingle Bells"
+    />
+
+
+
+    <bean id="kenny" parent="baseSaxo"/>
+
+    <bean id="david" parent="baseSaxo"/>
+
+    <util:list id="cities">
+        <bean class="City"
+              p:name="Chicago"
+              p:population="152000"/>
+        <bean class="City"
+              p:name="Minsk"
+              p:population="1900000"/>
+    </util:list>
+
+
+    <bean id="hank"
+          class="OneManBand">
+
+        <property name="instruments">
+            <map>
+                <entry key="PIANO" value-ref="piano"/>
+                <entry key="SAXO" value-ref="saxophone"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="instrument"
+          class="Saxophone"/>
+
+
+    <bean id="kenny2"
+          class="Instrumentalist">
+        <property name="song" value="Bells"/>
+    </bean>
+
+</beans>
