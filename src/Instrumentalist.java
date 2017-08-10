@@ -26,8 +26,9 @@ public class Instrumentalist implements Performer {
 
 
     @Autowired
-    @StringedInstrument
-    @Strummed
+    /*@StringedInstrument
+    @Strummed*/
+    @Qualifier("guitar")
     private Instrument instrument;
 /*
     @Autowired

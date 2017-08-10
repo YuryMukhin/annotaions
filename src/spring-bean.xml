@@ -25,13 +25,16 @@
           class="Piano"
           />
 
+    <bean id="guitar"
+          class="Guitar"
+          />
+
     <bean id="saxophone"
           class="Saxophone"
           autowire-candidate="false"/>
 
     <bean id="baseSaxo"
           class="Instrumentalist"
-          autowire-candidate="false"
           p:song="Jingle Bells"
     />
 
@@ -58,6 +61,7 @@
             <map>
                 <entry key="PIANO" value-ref="piano"/>
                 <entry key="SAXO" value-ref="saxophone"/>
+                <entry key="GUITAR" value-ref="guitar"/>
             </map>
         </property>
     </bean>
