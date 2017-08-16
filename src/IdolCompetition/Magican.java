@@ -1,3 +1,5 @@
+package IdolCompetition;
+
 /**
  * Created by ymukhin on 5/15/2017.
  */

@@ -1,9 +1,13 @@
+package IdolCompetition;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by ymukhin on 5/11/2017.
  */
+@Component("eddie")
 public class Instrumentalist implements Performer {
     public Instrumentalist() {
     }
@@ -14,6 +18,7 @@ public class Instrumentalist implements Performer {
         System.out.println(" INstrument");
     }
 
+    @Value("My" + " song")
     private String song;
 
     public void setSong(String song) {
@@ -26,13 +31,13 @@ public class Instrumentalist implements Performer {
 
 
     @Autowired
-    /*@StringedInstrument
-    @Strummed*/
-    @Qualifier("guitar")
+    @StringedInstrument
+    @Strummed
+    //@Qualifier("guitar")
     private Instrument instrument;
 /*
     @Autowired
-    public void setInstrument(Instrument instrument) {
+    public void setInstrument(IdolCompetition.Instrument instrument) {
         System.out.println("Hello");
         this.instrument = instrument;
     }*/

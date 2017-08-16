@@ -1,4 +1,5 @@
-import java.util.Collection;
+package IdolCompetition;
+
 import java.util.Map;
 
 /**

@@ -1,10 +1,12 @@
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+package IdolCompetition;
+
+import org.springframework.stereotype.Component;
 
 /**
  * Created by ymukhin on 8/2/2017.
  */
 
+@Component
 @StringedInstrument
 @Strummed
 public class Guitar implements Instrument {

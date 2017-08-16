@@ -1,3 +1,4 @@
+import IdolCompetition.Performer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args){
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-bean.xml");
-        Performer performer = (Performer) ctx.getBean("hank");
+        Performer performer = (Performer) ctx.getBean("eddie");
         performer.perform();
     }
 }
